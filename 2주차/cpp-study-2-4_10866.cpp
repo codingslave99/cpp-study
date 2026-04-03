@@ -71,4 +71,6 @@ int main(){
             cout << dq.back() << "\n";
         }
     }
+
+    return 0;
 }
