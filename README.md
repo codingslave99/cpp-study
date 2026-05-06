@@ -1,1 +1,5 @@
-"cpp-study-with-Baekjoon" 
+"cpp-study"
+
+2주차 까지는 백준
+
+3주차 부터는 정올
