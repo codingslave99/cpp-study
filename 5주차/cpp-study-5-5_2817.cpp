@@ -5,16 +5,21 @@ using namespace std;
 
 int k,a;
 vector<int> v;
-vector<bool> vb;
-void dfs(int now){
-    if(now==k || now<0)
+vector<int> tmp;
+void answer(int next, int count){
+    if(count == 6){
+        for(int i=0; i<6; i++){
+            cout << tmp[i] << " ";
+        }
+        cout << "\n";
         return;
-    if(vb[now] == false){
-        vb[now] = true;
-        cout << v[now] << " ";
     }
-    dfs(++now);
-    dfs(--now);
+    if(next >= k)
+        return;
+    tmp.push_back(v[next]);
+    answer(next+1, count+1);
+    tmp.pop_back();
+    answer(next+1, count);
 }
 
 int main(){
@@ -24,7 +29,6 @@ int main(){
         cin >> a;
         v.push_back(a);
     }
-    vb.resize(k,false);
-    dfs(0);
+    answer(0,0);
     return 0;
 }
